@@ -1,0 +1,49 @@
+
+WindowManager:
+    MainWindow:
+    AddRestaurantWindow:
+    RandomizeWindow:
+
+<MainWindow>:
+    name: "main_window"
+    GridLayout:
+        cols: 1
+        Button:
+            text: "Add Restaurant"
+            on_release: app.root.current = "add_restaurant_window"
+        Button:
+            text: "Auto Populate"
+        Button:
+            text: "Randomize"
+            on_release: app.root.current = "randomize_window"
+
+<AddRestaurantWindow>:
+    name: "add_restaurant_window"
+    restaurant: new_restaurant
+    GridLayout:
+        cols:1
+        TextInput:
+            id: new_restaurant
+            multiline: False
+        Button:
+            text: "Submit"
+            on_press: root.button_command()
+        Button:
+            text: "Go Back"
+            on_release: app.root.current = "main_window"
+
+<RandomizeWindow>
+    name: "randomize_window"
+    GridLayout
+        cols:1
+        Button:
+            text:"Suggest a restaurant"
+            on_release: root.on_button_press()
+        Button:
+            text:"Go Back"
+            on_release: app.root.current = "main_window"
+
+
+
+
+
